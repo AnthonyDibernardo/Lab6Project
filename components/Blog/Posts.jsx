@@ -1,14 +1,14 @@
 import React from "react";
-import blogContent from "./blogContent";
-import comment from "./comment";
+import BlogContent from './BlogContent.jsx';
+import Comment from "./Comment.jsx";
 
 
 
 function Posts() {
     return (
         <div>
-            <blogContent />
-            <comment />
+            <BlogContent />
+            <Comment />
         </div>
     );
 }

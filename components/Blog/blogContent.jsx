@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router";
 
 
 
-function blogContent() {
+function BlogContent() {
     return (
         <main>
             <h3>My First Blog Post</h3>
@@ -14,4 +14,4 @@ function blogContent() {
     );
 }
 
-export default blogContent;
+export default BlogContent;
