@@ -1,5 +1,8 @@
 import React from "react";
-import './css/posts.css'
+import './css/posts.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router";
+
+
 
 function Post() {
     return (

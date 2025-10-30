@@ -8,7 +8,7 @@ function Contact() {
             <form>
                 <input placeholder="name"/><br/>
                 <input placeholder="email"/><br/>
-                <input placeholder="message"/><br/>
+                <input class="message" placeholder="message"/><br/>
                 <button type="submit">Submit</button>
             </form>
 
