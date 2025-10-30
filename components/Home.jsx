@@ -6,12 +6,11 @@ import Posts from "./Blog/Posts";
 
 function Home() {
     return (
-        <main>
+        <div>
             <h2>Welcome to Our Blog<br></br> below are our recent posts</h2>
-            <ul>
                 <Posts />
-            </ul>
-        </main>
+            
+        </div>
     );
 }
 export default Home; 
