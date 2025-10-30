@@ -1,10 +1,9 @@
 import React from "react";
-import './css/posts.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router";
 
 
 
-function Post() {
+function blogContent() {
     return (
         <main>
             <h3>My First Blog Post</h3>
@@ -15,4 +14,4 @@ function Post() {
     );
 }
 
-export default Post
+export default blogContent;

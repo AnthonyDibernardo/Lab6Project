@@ -1,7 +1,7 @@
 import React from "react";
-import { useToggle } from './hooks/useToggle'
+import { useToggle } from '../hooks/useToggle'
 
-function Comments(){
+function comment(){
     const [comment, setComment] = useState('');
 
     const [show, toggleShow] = useToggle();
@@ -29,5 +29,6 @@ function Comments(){
             )}
 
         </div>
-    )
+    );
 }
+export default comment;
