@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router";
-import './css/home.css'
+import './css/home.css';
 import Posts from "./Blog/Posts.jsx";
 
 
