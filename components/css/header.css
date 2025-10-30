@@ -12,3 +12,7 @@ ul {
    color: white;
    justify-self: center;
 }
+
+header {
+   padding-top: 1fr;
+}
