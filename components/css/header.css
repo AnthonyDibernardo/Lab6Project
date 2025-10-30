@@ -5,8 +5,8 @@ h1 {
 ul {
    text-align: center;
 }
-li {
-   display: inline-flex; 
+.pageNav {
+   display: inline-block; 
    list-style-type: none;
    padding: 0 10%;
    color: white;
