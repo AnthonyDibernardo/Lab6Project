@@ -37,13 +37,17 @@ function Comment(){
             onClick={() => addComment(comment)}>
                 Submit</button>
 
-            <h3>Existing Comments</h3>
-            <ul>
-                {commentList.map((value, index) => (
-                    <IndividualComment value={value}></IndividualComment>
-                ))}
-            </ul>
 
+            {commentList.length === 0 ? (<p>There are no comments to display</p>) : (
+            <div>
+                <h3>Existing Comments</h3>
+                <ul>
+                    {commentList.map((value, index) => (
+                        <IndividualComment value={value}></IndividualComment>
+                    ))}
+                </ul>
+            </div>
+            )}
             
 
         </div>
