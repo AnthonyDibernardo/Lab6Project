@@ -4,12 +4,13 @@ import './css/home.css';
 import Posts from "./Blog/Posts.jsx";
 
 
+
 function Home() {
     return (
         <div>
             <h2>Welcome to Our Blog<br></br> below are our recent posts</h2>
-            <Posts />
             
+            <Posts />
         </div>
     );
 }

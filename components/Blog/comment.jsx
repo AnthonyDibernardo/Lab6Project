@@ -1,10 +1,18 @@
-import React from "react";
-import { useToggle } from '../hooks/useToggle.js'
+import React, {useState} from "react";
+import IndividualComment from "./IndividualComment";
 
 function Comment(){
-    const [comment, setComment] = useState('');
+    const [comment, setComment] = useState({
+        name: "",
+        content: ""
+    });
+   
 
-    const [show, toggleShow] = useToggle();
+    const [commentList, setCommentList] = useState([]);
+
+    const addComment = (comment) => {
+        setCommentList([...commentList, comment])
+    };
 
 
 
@@ -12,21 +20,31 @@ function Comment(){
 
         <div>
             <h2>Comments</h2>
+
+            <input 
+            value={comment.name}
+            onChange={(e) => setComment({...comment, name: e.target.value})}
+            placeholder="name"></input>
+            <br />
             <textarea
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
+            value={comment.content}
+            onChange={(e) => setComment({...comment, content: e.target.value})}
 
             />
-            <button type="submit">Submit</button>
+            <br />
+            <button 
+            type="submit"
+            onClick={() => addComment(comment)}>
+                Submit</button>
 
             <h3>Existing Comments</h3>
-            <button onClick={toggleShow}>Show Comments</button>
-            {show && (
-                <ul>
-                    <li>{comment}</li>
-                </ul>
+            <ul>
+                {commentList.map((value, index) => (
+                    <IndividualComment value={value}></IndividualComment>
+                ))}
+            </ul>
 
-            )}
+            
 
         </div>
     );
