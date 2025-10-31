@@ -1,0 +1,13 @@
+.postNav {
+   display: block; 
+   list-style-type: none;
+   padding: 0 10%;
+   color: white;
+   justify-self: center;
+}
+.dark{
+    background-color: #242424;
+}
+.light{
+    background-color: white;
+}

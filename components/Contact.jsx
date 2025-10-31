@@ -1,8 +1,11 @@
-import React from "react";
 import './css/contact.css'
+import { React, useContext } from "react";
+import { ThemeContext } from './header.jsx';
+
 function Contact() {
+    let mode = useContext(ThemeContext);
     return(
-        <div>
+        <div className={mode}>
 
             <h2>Contact us with this form!</h2>
             <form>
