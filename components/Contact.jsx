@@ -1,6 +1,6 @@
 import './css/contact.css'
 import { React, useContext } from "react";
-import { ThemeContext } from './header.jsx';
+import { ThemeContext } from './Context.jsx';
 
 function Contact() {
     let mode = useContext(ThemeContext);

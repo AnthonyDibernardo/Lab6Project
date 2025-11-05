@@ -1,6 +1,6 @@
 import React, { useState, useContext} from "react";
 import IndividualComment from "./IndividualComment";
-import { ThemeContext } from '../header.jsx';
+import { ThemeContext } from '../Context.jsx';
 
 function Post({post}){
     let mode = useContext(ThemeContext);
