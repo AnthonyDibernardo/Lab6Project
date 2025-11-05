@@ -1,15 +1,15 @@
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 import IndividualComment from "./IndividualComment";
-import { ThemeContext } from '../header.jsx';
+import Post from './post.jsx'
 
 
 function Post1() {
-    let mode = useContext(ThemeContext);
     return (
-        <div className={mode}>
-            <BlogContent />
-            <Comments />
-        </div>
+        <Post 
+            Title="My First Blog Post" 
+            Author="Anthony DiBernardo"
+            Body="Cras ipsum quis praesent congue malesuada, nunc in, sed aenean nec id. Praesent, eget in ac convallis pretium, dapibus sem praesent in volutpat suspendisse. Ultricies pellentesque, lacus dignissim, sit congue euismod risus imperdiet ac hac dignissim. Eros, faucibus, faucibus consequat proin suspendisse purus convallis elementum et ligula at. Ac at consequat purus id, lacus, ante tellus facilisis nibh montes tortor. Vel, tempor, diam ipsum aliquam montes lectus sit dapibus eget at ultricies."
+        />
     );
 }
 

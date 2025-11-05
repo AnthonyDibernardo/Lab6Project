@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router";
 import Home from './Home.jsx'
 import Contact from './Contact.jsx'
@@ -7,15 +7,14 @@ import Post2 from './Blog/Post2.jsx'
 import Post3 from './Blog/Post3.jsx'
 import './css/header.css'
 
+export const ThemeContext = createContext({
+    theme: 'dark',
+    toggleTheme: () => console.log("No Theme Provided"),
+});
 function Header(){
-    const [theme, setTheme] = useState('dark');
-    const ThemeContext = createContext(theme);
-    const toggleMode = () => {
-        if(theme === 'dark'){
-            setTheme('light');
-        } else {
-            setTheme('dark');
-        }
+    const [theme, setTheme] = useState("dark");
+    const toggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === 'light') ? 'dark' : 'light');
     }
 
     return (
@@ -26,8 +25,7 @@ function Header(){
                         <Link className="pageNav" to="/">Home</Link> 
                         <Link className="pageNav" to="/contact">Contact</Link>
                     </nav>
-                    <button type="button" onClick={toggleMode}>theme</button>
-                    <ThemeContext.Provider value={theme}>
+                    <ThemeContext.Provider value={ {theme, toggleTheme }}>
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/contact" element={<Contact />} />
@@ -42,4 +40,5 @@ function Header(){
 }
 
 export default Header;
-export let ThemeContext = 'dark';
+
+export const useTheme = () => useContext(ThemeContext);
