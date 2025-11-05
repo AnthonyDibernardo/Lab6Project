@@ -2,15 +2,15 @@ import React, { useState, useContext} from "react";
 import IndividualComment from "./IndividualComment";
 import { ThemeContext } from '../Context.jsx';
 
-function Post({post}){
+function Post({Title, Author, Date, Body, comments}){
     let mode = useContext(ThemeContext);
 
     return (
         <main className={mode}>
-            <h3>{post.Title}</h3>
-            <p id="author">{post.Author}</p>
-            <p id="date">{post.Date}</p>
-            <p id="body">{post.Content}</p>
+            <h3>{Title}</h3>
+            <p id="author">{Author}</p>
+            <p id="date">{Date}</p>
+            <p id="body">{Body}</p>
             <Comments /> 
         </main>
     );
