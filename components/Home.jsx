@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { BrowserRouter, Link } from "react-router";
 import { ThemeContext } from './Context.jsx';
 import './css/home.css';
 
@@ -7,7 +7,6 @@ import './css/home.css';
 
 function Home() {
     let mode = useContext(ThemeContext);
-    console.log({mode});
     return (
         <div className={mode}>
             <h2>Welcome to Our Blog<br></br> below are our recent posts</h2>
