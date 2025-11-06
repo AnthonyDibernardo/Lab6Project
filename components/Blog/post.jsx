@@ -1,9 +1,15 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext, useEffect} from "react";
 import IndividualComment from "./IndividualComment";
 import { ThemeContext } from '../Context.jsx';
+import axios from 'axios';
 
 function Post({Title, Author, Date, Body, comments}){
     let mode = useContext(ThemeContext);
+    
+    useEffect(() => {
+        //Experimental and for testing
+       axios.get("https://jsonplaceholder.typicode.com/posts/1").then(res =>console.log(res))
+    });
 
     return (
         <main className={mode}>
