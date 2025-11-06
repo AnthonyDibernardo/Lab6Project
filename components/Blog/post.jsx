@@ -1,28 +1,37 @@
 import React, { useState, useContext, useEffect} from "react";
+import { useParams } from "react-router";
 import IndividualComment from "./IndividualComment";
 import { ThemeContext } from '../Context.jsx';
 import axios from 'axios';
+import Content from './Content.jsx';
 
 function Post({Title, Author, Date, Body, comments}){
     let mode = useContext(ThemeContext);
 
-    const [loading, setLoading] = useState(true)
+    const params = useParams();
+
+    const [loading, setLoading] = useState(true);
+    const [postData, setPostData] = useState();
+
+    console.log(postData);
     
     useEffect(() => {
         //Experimental and for testing
        axios.get("https://jsonplaceholder.typicode.com/posts").then(res =>console.log(res))
-        .then(response => Post(response.data))
+        .then(response => setPostData(response.data))
         .catch(error => console.error('Error fetching posts:', error))
         .finally(() => setLoading(false));
-    });
+    }, []);
 
     return (
         <main className={mode}>
             {loading ? (<p>Loading</p>) : (<>
-                <h3>{Title}</h3>
-                <p id="author">{Author}</p>
-                <p id="date">{Date}</p>
-                <p id="body">{Body}</p>
+                <Content 
+                title={postData.title}
+                content={postData.body}
+                author={postData.author}
+                />
+
                 <Comments /> 
             </>)}
         </main>
