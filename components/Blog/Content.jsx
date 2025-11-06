@@ -1,13 +1,13 @@
 import React from "react";
 
-function Content({value}){
+function Content({title, author, date, body}){
 
     return(
         <div>
-            <h3>{value.title}</h3>
-            <p id="author">{value.author}</p>
-            <p id="date">{value.date}</p>
-            <p id="body">{value.body}</p>
+            <h3>{title}</h3>
+            <p id="author">{author}</p>
+            <p id="date">{date}</p>
+            <p id="body">{body}</p>
         </div>
     );
 }

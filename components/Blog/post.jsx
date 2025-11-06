@@ -5,19 +5,26 @@ import axios from 'axios';
 
 function Post({Title, Author, Date, Body, comments}){
     let mode = useContext(ThemeContext);
+
+    const [loading, setLoading] = useState(true)
     
     useEffect(() => {
         //Experimental and for testing
-       axios.get("https://jsonplaceholder.typicode.com/posts/1").then(res =>console.log(res))
+       axios.get("https://jsonplaceholder.typicode.com/posts").then(res =>console.log(res))
+        .then(response => Post(response.data))
+        .catch(error => console.error('Error fetching posts:', error))
+        .finally(() => setLoading(false));
     });
 
     return (
         <main className={mode}>
-            <h3>{Title}</h3>
-            <p id="author">{Author}</p>
-            <p id="date">{Date}</p>
-            <p id="body">{Body}</p>
-            <Comments /> 
+            {loading ? (<p>Loading</p>) : (<>
+                <h3>{Title}</h3>
+                <p id="author">{Author}</p>
+                <p id="date">{Date}</p>
+                <p id="body">{Body}</p>
+                <Comments /> 
+            </>)}
         </main>
     );
 }
