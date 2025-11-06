@@ -27,9 +27,7 @@ function Header(){
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/contact" element={<Contact />} />
-                            <Route path="/Post1" element={<Post1 />} />
-                            <Route path="/Post2" element={<Post2 />} />
-                            <Route path="/Post3" element={<Post3 />} />
+                
                         </Routes>
                     </ThemeContext>
                 </BrowserRouter>

@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import Post from './post.jsx'
+import Post from './post.jsx';
+import Content from './Content.jsx';
 
 
 function Post1() {
     return (
         <div>
-            <Post 
+            <Post
                 Title="My First Blog Post" 
                 Author="Anthony DiBernardo"
                 Date="2025-10-30 22:43"
