@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+li.Comment {
+   display: list-item; 
+   list-style-type: none;
+   padding: 0 10%;
+   color: white;
+   justify-self: center;
+}
