@@ -17,7 +17,7 @@ function Post({Title, Author, Date, Body, comments}){
             <p id="author">{Author}</p>
             <p id="date">{Date}</p>
             <p id="body">{Body}</p>
-            <Comments /> 
+            <IndividualComment id={1}/> 
         </main>
     );
 }
