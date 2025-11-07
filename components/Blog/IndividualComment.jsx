@@ -11,20 +11,17 @@ function IndividualComment({id}){
             })
             .catch(error => console.log(error))
             .finally(setLoading(false));
-    }, []);
+    }, [id]);
+    if (loading) return <p>Loading</p>;
+    if (comments.length === 0) return <p>No comments yet, be the first</p>;
     return(
         <div>
-            {loading ? (
-                <p>Loading</p>
-            ) : (
-                comments.map( comment => (
-                    <div key={comment.id}>
-                        <p>{comment.name} &lt;{comment.email}&gt;</p>
-                        <p>{comment.body}</p>
-                    </div>
-                ))   
-            )
-            }
+            {comments.map( comment => (
+            <div key={comment.id}>
+                <p>{comment.name} &lt;{comment.email}&gt;</p>
+                <p>{comment.body}</p>
+            </div>
+            ))}
         </div>
     );
 }

@@ -10,22 +10,17 @@ function Home() {
     let mode = useContext(ThemeContext);
     const [loading, setLoading] = useState(true);
     const [posts, setPost] = useState([]);
-    const [error, setError] = useState(null);
-    const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
        axios.get(`https://jsonplaceholder.typicode.com/posts`)
         .then(res => {
             setPost(res.data)
-            console.log(res);
         })
         .catch(error => {
-            setError('Error fetching posts:', error)
-            setHasError(true);
+            console.log('Error fetching posts:', error)
         })
         .finally(() => setLoading(false));
     }, []);
-    if(hasError) console.log(error);
     return (
         <div className={mode}>
             <h2>Welcome to Our Blog<br></br> below are our posts</h2>

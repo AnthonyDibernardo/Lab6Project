@@ -16,19 +16,27 @@ function Post({id}){
             response => console.log(response);
             setPostData(response.data);
         })
-        .catch(error => console.error('Error fetching posts:', error))
-        .finally(() => setLoading(false));
-        if(loading) return <p>loading</p>
-        setLoading(true);
-    }, []);
+        .catch(error => console.log('Error fetching posts:', error))
+    }, [id]);
 
+    const [author, setAuthor] = useState();
+    useEffect(() => {
+        if(postData == undefined) return;
+        axios.get(`https://jsonplaceholder.typicode.com/users/${postData.userId}`)
+            .then(response => {
+                response => console.log(response);
+                setAuthor(response.data);
+            })
+            .catch(error => console.log('Error fetching posts:', error))
+            .finally(() => setLoading(false));
+    }, [postData]);
     return (
         <main className={mode}>
             {loading ? (<p>Loading</p>) : (<>
                 <Content 
                 title={postData.title}
                 content={postData.body}
-                author={postData.userId}
+                author={author}
                 />
             </>)}
         </main>
