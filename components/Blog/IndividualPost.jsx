@@ -1,11 +1,16 @@
 import React from "react";
+import { useParams } from "react-router";
 import Post from "./post";
+import IndividualComment from "./IndividualComment";
 
-function IndividualPost({value}){
-
+function IndividualPost(){
+    const { id } = useParams();
+    console.log(id);
     return(
         <div>
-            <Post />
+            <Post id={id} />
+            <h3>Comments</h3>
+            <IndividualComment id={id} />
         </div>
     );
 }

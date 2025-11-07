@@ -19,7 +19,7 @@ function IndividualComment({id}){
             ) : (
                 comments.map( comment => (
                     <div key={comment.id}>
-                        <p>{comment.name}</p>
+                        <p>{comment.name} &lt;{comment.email}&gt;</p>
                         <p>{comment.body}</p>
                     </div>
                 ))   

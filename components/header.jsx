@@ -3,9 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './css/header.css'
 import Home from "./Home.jsx";
 import Contact from "./Contact.jsx";
-import Post1 from "./Blog/Post1.jsx"
-import Post2 from "./Blog/Post2.jsx"
-import Post3 from "./Blog/Post3.jsx"
+import IndividualPost from "./Blog/IndividualPost.jsx";
 import { ThemeContext } from "./Context.jsx";
 
 function Header(){
@@ -27,7 +25,7 @@ function Header(){
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/contact" element={<Contact />} />
-                
+                            <Route path="/posts/:id" element={<IndividualPost />} />
                         </Routes>
                     </ThemeContext>
                 </BrowserRouter>
