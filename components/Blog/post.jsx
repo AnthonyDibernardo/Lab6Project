@@ -12,15 +12,31 @@ function Post({Title, Author, Date, Body, comments}){
 
     const [loading, setLoading] = useState(true);
     const [postData, setPostData] = useState();
+    const [userData, setUserData] = useState();
 
     console.log(postData);
     
     useEffect(() => {
         //Experimental and for testing
-       axios.get("https://jsonplaceholder.typicode.com/posts").then(res =>console.log(res))
-        .then(response => setPostData(response.data))
-        .catch(error => console.error('Error fetching posts:', error))
-        .finally(() => setLoading(false));
+      // axios.get(`https://jsonplaceholder.typicode.com/posts/${params.post_id}`).then(res =>console.log(res))
+      //  .then(response => setPostData(response.data))
+       // .catch(error => console.error('Error fetching posts:', error))
+       // .finally(() => setLoading(false));
+
+       const fetchData = async () => {
+        try {
+            const postRes = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.post_id}`)
+            setPostData(postRes.data)
+
+            const userRes = await axios.get`https://jsonplaceholder.typicode.com/users/${postRes.data.userId}`
+            setUserData(userRes)
+        } catch (e) {
+            console.log(e)
+        } finally {
+            setLoading(false)
+        }
+
+       }
     }, []);
 
     return (

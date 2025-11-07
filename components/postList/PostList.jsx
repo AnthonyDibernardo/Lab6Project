@@ -4,7 +4,7 @@ function PostList () {
 
     return (
         <div>
-            
+           
         </div>
     );
 }
