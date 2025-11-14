@@ -73,7 +73,9 @@ top: 0;
 }
 .dark{
     background-color: #242424;
+    color: white;
 }
 .light{
     background-color: white;
+    color: black;
 }
