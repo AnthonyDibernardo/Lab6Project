@@ -28,7 +28,7 @@ function Home() {
                 <p>Loading</p>
             ) : (
                 posts.map( post => (
-                    <li key={post.id}>
+                    <li key={post.id} className={mode}>
                         <Link to={`/posts/${post.id}`}>{post.title}</Link>
                     </li>
                 ))   
