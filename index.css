@@ -71,6 +71,12 @@ color: white;
 top: 0;
 
 }
+h2.dark{
+  color: white;
+}
+h2.white{
+  color: #242424;
+}
 .dark{
     background-color: #242424;
     color: white;
